@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="O6X-Ld-saN">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="NgU-Dl-GND" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sTl-Pq-uFU"/>
+                        <viewControllerLayoutGuide type="bottom" id="gkW-SQ-EZH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="grW-Ru-MYd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_screen_background" translatesAutoresizingMaskIntoConstraints="NO" id="LXF-iY-tBT">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dfK-n6-UrI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LXF-iY-tBT" firstAttribute="centerX" secondItem="grW-Ru-MYd" secondAttribute="centerX" id="Sop-3Z-WXx"/>
+                            <constraint firstItem="LXF-iY-tBT" firstAttribute="width" secondItem="grW-Ru-MYd" secondAttribute="width" id="SxE-m4-ZwF"/>
+                            <constraint firstItem="LXF-iY-tBT" firstAttribute="height" secondItem="grW-Ru-MYd" secondAttribute="height" id="TCb-lr-4tN"/>
+                            <constraint firstItem="LXF-iY-tBT" firstAttribute="centerY" secondItem="grW-Ru-MYd" secondAttribute="centerY" id="UvA-ec-hMe"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiP-e5-f2n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash_screen_background" width="375" height="812"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

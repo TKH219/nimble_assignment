@@ -6,11 +6,13 @@ def survey_pods
   pod 'RxCocoa', '6.5.0'
   pod 'RxGesture'
   pod 'NSObject+Rx'
+  pod "PromiseKit", "~> 8"
 end
 
 
 target 'nimble_assignment' do
   use_frameworks!
+  survey_pods
   pod 'SnapKit', '5.6.0'
   pod 'Alamofire', '5.6.4'
   pod 'IQKeyboardManagerSwift'

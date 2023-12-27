@@ -9,15 +9,39 @@
 /* Begin PBXBuildFile section */
 		08FB1672D4E902CC794E2BD2 /* Pods_nimble_assignment_nimble_assignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB28F447170009ED31ACA81A /* Pods_nimble_assignment_nimble_assignmentUITests.framework */; };
 		3F81527DFFFDE09E9475A8D6 /* Pods_nimble_assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBEAAB14FA646422B9836D7 /* Pods_nimble_assignment.framework */; };
+		4E014DBE2B393159005DFF65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DBD2B393159005DFF65 /* Constants.swift */; };
+		4E014DC22B39331D005DFF65 /* AuthenicationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DC12B39331D005DFF65 /* AuthenicationRepository.swift */; };
+		4E014DC42B39338D005DFF65 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DC32B39338D005DFF65 /* LoginResponse.swift */; };
+		4E014DC62B3934FE005DFF65 /* AuthenicationAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DC52B3934FE005DFF65 /* AuthenicationAttributes.swift */; };
+		4E014DC92B393526005DFF65 /* AuthenicationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DC82B393526005DFF65 /* AuthenicationRepositoryImpl.swift */; };
+		4E014DCB2B393A5A005DFF65 /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DCA2B393A5A005DFF65 /* AlamofireClient.swift */; };
+		4E014DCD2B39ACA1005DFF65 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DCC2B39ACA1005DFF65 /* CustomError.swift */; };
+		4E014DD22B3A89B4005DFF65 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD12B3A89B4005DFF65 /* UIViewController+.swift */; };
+		4E014DD62B3BD1D4005DFF65 /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD52B3BD1D4005DFF65 /* SurveyListViewController.swift */; };
+		4E014DD82B3BD1E0005DFF65 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD72B3BD1E0005DFF65 /* SurveyListViewModel.swift */; };
+		4E014DDA2B3BD630005DFF65 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD92B3BD630005DFF65 /* Metadata.swift */; };
+		4E014DDC2B3BD657005DFF65 /* GetListSurveyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DDB2B3BD657005DFF65 /* GetListSurveyResponse.swift */; };
+		4E014DDE2B3BD69E005DFF65 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DDD2B3BD69E005DFF65 /* Survey.swift */; };
+		4E014DE02B3BD9C6005DFF65 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DDF2B3BD9C6005DFF65 /* BaseResponse.swift */; };
+		4E014DE32B3BDA22005DFF65 /* SurveyRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DE22B3BDA22005DFF65 /* SurveyRepositoryImpl.swift */; };
+		4E014DE52B3BDA32005DFF65 /* SurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DE42B3BDA32005DFF65 /* SurveyRepository.swift */; };
+		4E014DEA2B3BE2A2005DFF65 /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DE92B3BE2A2005DFF65 /* UserSessionDataStore.swift */; };
 		4EFF39812B37E0F10053C98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39802B37E0F10053C98E /* AppDelegate.swift */; };
-		4EFF39832B37E0F10053C98E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39822B37E0F10053C98E /* SceneDelegate.swift */; };
-		4EFF39852B37E0F10053C98E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39842B37E0F10053C98E /* ViewController.swift */; };
-		4EFF39882B37E0F10053C98E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39862B37E0F10053C98E /* Main.storyboard */; };
 		4EFF398A2B37E0F30053C98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39892B37E0F30053C98E /* Assets.xcassets */; };
 		4EFF398D2B37E0F30053C98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF398B2B37E0F30053C98E /* LaunchScreen.storyboard */; };
 		4EFF39982B37E0F40053C98E /* nimble_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39972B37E0F40053C98E /* nimble_assignmentTests.swift */; };
 		4EFF39A22B37E0F40053C98E /* nimble_assignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39A12B37E0F40053C98E /* nimble_assignmentUITests.swift */; };
 		4EFF39A42B37E0F40053C98E /* nimble_assignmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39A32B37E0F40053C98E /* nimble_assignmentUITestsLaunchTests.swift */; };
+		4EFF39B22B38029F0053C98E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39B12B38029F0053C98E /* BaseViewController.swift */; };
+		4EFF39B42B3802BB0053C98E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39B32B3802BB0053C98E /* BaseViewModel.swift */; };
+		4EFF39BB2B3804150053C98E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39BA2B3804150053C98E /* SplashViewController.swift */; };
+		4EFF39BD2B38041E0053C98E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39BC2B38041E0053C98E /* SplashViewModel.swift */; };
+		4EFF39C22B38051E0053C98E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39C12B38051E0053C98E /* LoginViewController.swift */; };
+		4EFF39C42B3805270053C98E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39C32B3805270053C98E /* LoginViewModel.swift */; };
+		4EFF39C92B380FF80053C98E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39C82B380FF80053C98E /* CustomTextField.swift */; };
+		4EFF39CB2B3810370053C98E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39CA2B3810370053C98E /* CustomButton.swift */; };
+		4EFF39CD2B38106F0053C98E /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39CC2B38106F0053C98E /* Commons.swift */; };
+		4EFF39D22B38150C0053C98E /* AppInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39D12B38150C0053C98E /* AppInjection.swift */; };
 		D2FA6D70B3ACFD4E55755CEB /* Pods_nimble_assignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E35FB5F71E0FFD3B33BB5F /* Pods_nimble_assignmentTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,11 +66,25 @@
 		031910EB5171F7275CF570E8 /* Pods-nimble_assignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-nimble_assignmentTests/Pods-nimble_assignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		29AA58A6C2F457E76E63B5DF /* Pods-nimble_assignment-nimble_assignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignment-nimble_assignmentUITests.release.xcconfig"; path = "Target Support Files/Pods-nimble_assignment-nimble_assignmentUITests/Pods-nimble_assignment-nimble_assignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4CB5843F3A8053BF47AE66F2 /* Pods-nimble_assignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignmentTests.release.xcconfig"; path = "Target Support Files/Pods-nimble_assignmentTests/Pods-nimble_assignmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E014DBD2B393159005DFF65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4E014DC12B39331D005DFF65 /* AuthenicationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenicationRepository.swift; sourceTree = "<group>"; };
+		4E014DC32B39338D005DFF65 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		4E014DC52B3934FE005DFF65 /* AuthenicationAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenicationAttributes.swift; sourceTree = "<group>"; };
+		4E014DC82B393526005DFF65 /* AuthenicationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenicationRepositoryImpl.swift; sourceTree = "<group>"; };
+		4E014DCA2B393A5A005DFF65 /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
+		4E014DCC2B39ACA1005DFF65 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		4E014DD12B3A89B4005DFF65 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		4E014DD52B3BD1D4005DFF65 /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
+		4E014DD72B3BD1E0005DFF65 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
+		4E014DD92B3BD630005DFF65 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		4E014DDB2B3BD657005DFF65 /* GetListSurveyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetListSurveyResponse.swift; sourceTree = "<group>"; };
+		4E014DDD2B3BD69E005DFF65 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		4E014DDF2B3BD9C6005DFF65 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		4E014DE22B3BDA22005DFF65 /* SurveyRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepositoryImpl.swift; sourceTree = "<group>"; };
+		4E014DE42B3BDA32005DFF65 /* SurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepository.swift; sourceTree = "<group>"; };
+		4E014DE92B3BE2A2005DFF65 /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
 		4EFF397D2B37E0F10053C98E /* nimble_assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble_assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFF39802B37E0F10053C98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EFF39822B37E0F10053C98E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4EFF39842B37E0F10053C98E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4EFF39872B37E0F10053C98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EFF39892B37E0F30053C98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EFF398C2B37E0F30053C98E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EFF398E2B37E0F30053C98E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +93,16 @@
 		4EFF399D2B37E0F40053C98E /* nimble_assignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nimble_assignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFF39A12B37E0F40053C98E /* nimble_assignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nimble_assignmentUITests.swift; sourceTree = "<group>"; };
 		4EFF39A32B37E0F40053C98E /* nimble_assignmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nimble_assignmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4EFF39B12B38029F0053C98E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4EFF39B32B3802BB0053C98E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		4EFF39BA2B3804150053C98E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		4EFF39BC2B38041E0053C98E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		4EFF39C12B38051E0053C98E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4EFF39C32B3805270053C98E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4EFF39C82B380FF80053C98E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4EFF39CA2B3810370053C98E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		4EFF39CC2B38106F0053C98E /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		4EFF39D12B38150C0053C98E /* AppInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjection.swift; sourceTree = "<group>"; };
 		567FDC266CF54A67B9638613 /* Pods-nimble_assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignment.debug.xcconfig"; path = "Target Support Files/Pods-nimble_assignment/Pods-nimble_assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		83136E81CB9D0ECC9C8A2828 /* Pods-nimble_assignment-nimble_assignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignment-nimble_assignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-nimble_assignment-nimble_assignmentUITests/Pods-nimble_assignment-nimble_assignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BB28F447170009ED31ACA81A /* Pods_nimble_assignment_nimble_assignmentUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nimble_assignment_nimble_assignmentUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +139,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E014DBB2B3930EA005DFF65 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DE12B3BDA0C005DFF65 /* Survey */,
+				4E014DC02B393309005DFF65 /* Authenication */,
+				4E014DC12B39331D005DFF65 /* AuthenicationRepository.swift */,
+				4E014DE42B3BDA32005DFF65 /* SurveyRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4E014DBC2B393145005DFF65 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DBD2B393159005DFF65 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4E014DBF2B393303005DFF65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DC32B39338D005DFF65 /* LoginResponse.swift */,
+				4E014DC52B3934FE005DFF65 /* AuthenicationAttributes.swift */,
+				4E014DD92B3BD630005DFF65 /* Metadata.swift */,
+				4E014DDB2B3BD657005DFF65 /* GetListSurveyResponse.swift */,
+				4E014DDD2B3BD69E005DFF65 /* Survey.swift */,
+				4E014DDF2B3BD9C6005DFF65 /* BaseResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4E014DC02B393309005DFF65 /* Authenication */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DC82B393526005DFF65 /* AuthenicationRepositoryImpl.swift */,
+			);
+			path = Authenication;
+			sourceTree = "<group>";
+		};
+		4E014DD32B3BCB4F005DFF65 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DD42B3BD1AF005DFF65 /* SurveyList */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		4E014DD42B3BD1AF005DFF65 /* SurveyList */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DD52B3BD1D4005DFF65 /* SurveyListViewController.swift */,
+				4E014DD72B3BD1E0005DFF65 /* SurveyListViewModel.swift */,
+			);
+			path = SurveyList;
+			sourceTree = "<group>";
+		};
+		4E014DE12B3BDA0C005DFF65 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DE22B3BDA22005DFF65 /* SurveyRepositoryImpl.swift */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		4E014DE62B3BDF6E005DFF65 /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DE82B3BDF80005DFF65 /* Local */,
+				4E014DE72B3BDF77005DFF65 /* Remote */,
+			);
+			path = Datasources;
+			sourceTree = "<group>";
+		};
+		4E014DE72B3BDF77005DFF65 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DCA2B393A5A005DFF65 /* AlamofireClient.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		4E014DE82B3BDF80005DFF65 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DE92B3BE2A2005DFF65 /* UserSessionDataStore.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		4EFF39742B37E0F10053C98E = {
 			isa = PBXGroup;
 			children = (
@@ -116,12 +254,15 @@
 		4EFF397F2B37E0F10053C98E /* nimble_assignment */ = {
 			isa = PBXGroup;
 			children = (
-				4EFF39802B37E0F10053C98E /* AppDelegate.swift */,
-				4EFF39822B37E0F10053C98E /* SceneDelegate.swift */,
-				4EFF39842B37E0F10053C98E /* ViewController.swift */,
-				4EFF39862B37E0F10053C98E /* Main.storyboard */,
-				4EFF39892B37E0F30053C98E /* Assets.xcassets */,
-				4EFF398B2B37E0F30053C98E /* LaunchScreen.storyboard */,
+				4EFF39B72B3803930053C98E /* Application */,
+				4EFF39B02B38027B0053C98E /* Base */,
+				4E014DE62B3BDF6E005DFF65 /* Datasources */,
+				4E014DBF2B393303005DFF65 /* Models */,
+				4E014DBB2B3930EA005DFF65 /* Repositories */,
+				4EFF39C62B380FCA0053C98E /* Shared */,
+				4EFF39C52B38055E0053C98E /* Resources */,
+				4EFF39B82B3803F00053C98E /* Modules */,
+				4EFF39B62B3803320053C98E /* Utils */,
 				4EFF398E2B37E0F30053C98E /* Info.plist */,
 			);
 			path = nimble_assignment;
@@ -144,6 +285,113 @@
 			path = nimble_assignmentUITests;
 			sourceTree = "<group>";
 		};
+		4EFF39B02B38027B0053C98E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39B12B38029F0053C98E /* BaseViewController.swift */,
+				4EFF39B32B3802BB0053C98E /* BaseViewModel.swift */,
+				4E014DCC2B39ACA1005DFF65 /* CustomError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4EFF39B52B38032B0053C98E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DD12B3A89B4005DFF65 /* UIViewController+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4EFF39B62B3803320053C98E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4EFF39B72B3803930053C98E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF398B2B37E0F30053C98E /* LaunchScreen.storyboard */,
+				4EFF39802B37E0F10053C98E /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4EFF39B82B3803F00053C98E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4E014DD32B3BCB4F005DFF65 /* Survey */,
+				4EFF39BE2B3805040053C98E /* Authenication */,
+				4EFF39B92B3803F80053C98E /* Splash */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4EFF39B92B3803F80053C98E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39BA2B3804150053C98E /* SplashViewController.swift */,
+				4EFF39BC2B38041E0053C98E /* SplashViewModel.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		4EFF39BE2B3805040053C98E /* Authenication */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39BF2B38050D0053C98E /* Login */,
+			);
+			path = Authenication;
+			sourceTree = "<group>";
+		};
+		4EFF39BF2B38050D0053C98E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39C12B38051E0053C98E /* LoginViewController.swift */,
+				4EFF39C32B3805270053C98E /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		4EFF39C52B38055E0053C98E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39892B37E0F30053C98E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4EFF39C62B380FCA0053C98E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39B52B38032B0053C98E /* Extensions */,
+				4E014DBC2B393145005DFF65 /* Constants */,
+				4EFF39D02B3815030053C98E /* Injection */,
+				4EFF39C72B380FE90053C98E /* UI */,
+				4EFF39CC2B38106F0053C98E /* Commons.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4EFF39C72B380FE90053C98E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39C82B380FF80053C98E /* CustomTextField.swift */,
+				4EFF39CA2B3810370053C98E /* CustomButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4EFF39D02B3815030053C98E /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF39D12B38150C0053C98E /* AppInjection.swift */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
 		9668ADF34CD96E923CE55FA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +412,6 @@
 				031910EB5171F7275CF570E8 /* Pods-nimble_assignmentTests.debug.xcconfig */,
 				4CB5843F3A8053BF47AE66F2 /* Pods-nimble_assignmentTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -280,7 +527,6 @@
 			files = (
 				4EFF398D2B37E0F30053C98E /* LaunchScreen.storyboard in Resources */,
 				4EFF398A2B37E0F30053C98E /* Assets.xcassets in Resources */,
-				4EFF39882B37E0F10053C98E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,9 +671,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EFF39852B37E0F10053C98E /* ViewController.swift in Sources */,
+				4EFF39D22B38150C0053C98E /* AppInjection.swift in Sources */,
+				4E014DC62B3934FE005DFF65 /* AuthenicationAttributes.swift in Sources */,
+				4E014DDC2B3BD657005DFF65 /* GetListSurveyResponse.swift in Sources */,
+				4EFF39C22B38051E0053C98E /* LoginViewController.swift in Sources */,
+				4EFF39B42B3802BB0053C98E /* BaseViewModel.swift in Sources */,
+				4EFF39CD2B38106F0053C98E /* Commons.swift in Sources */,
+				4EFF39CB2B3810370053C98E /* CustomButton.swift in Sources */,
+				4E014DD62B3BD1D4005DFF65 /* SurveyListViewController.swift in Sources */,
+				4E014DE52B3BDA32005DFF65 /* SurveyRepository.swift in Sources */,
+				4EFF39B22B38029F0053C98E /* BaseViewController.swift in Sources */,
+				4E014DCD2B39ACA1005DFF65 /* CustomError.swift in Sources */,
+				4E014DE02B3BD9C6005DFF65 /* BaseResponse.swift in Sources */,
+				4E014DC42B39338D005DFF65 /* LoginResponse.swift in Sources */,
+				4E014DCB2B393A5A005DFF65 /* AlamofireClient.swift in Sources */,
+				4E014DEA2B3BE2A2005DFF65 /* UserSessionDataStore.swift in Sources */,
+				4EFF39C42B3805270053C98E /* LoginViewModel.swift in Sources */,
+				4EFF39C92B380FF80053C98E /* CustomTextField.swift in Sources */,
+				4E014DE32B3BDA22005DFF65 /* SurveyRepositoryImpl.swift in Sources */,
+				4EFF39BD2B38041E0053C98E /* SplashViewModel.swift in Sources */,
+				4E014DC22B39331D005DFF65 /* AuthenicationRepository.swift in Sources */,
+				4E014DD82B3BD1E0005DFF65 /* SurveyListViewModel.swift in Sources */,
 				4EFF39812B37E0F10053C98E /* AppDelegate.swift in Sources */,
-				4EFF39832B37E0F10053C98E /* SceneDelegate.swift in Sources */,
+				4EFF39BB2B3804150053C98E /* SplashViewController.swift in Sources */,
+				4E014DDA2B3BD630005DFF65 /* Metadata.swift in Sources */,
+				4E014DC92B393526005DFF65 /* AuthenicationRepositoryImpl.swift in Sources */,
+				4E014DDE2B3BD69E005DFF65 /* Survey.swift in Sources */,
+				4E014DD22B3A89B4005DFF65 /* UIViewController+.swift in Sources */,
+				4E014DBE2B393159005DFF65 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,14 +735,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4EFF39862B37E0F10053C98E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4EFF39872B37E0F10053C98E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4EFF398B2B37E0F30053C98E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -610,7 +873,7 @@
 				INFOPLIST_FILE = nimble_assignment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,7 +902,7 @@
 				INFOPLIST_FILE = nimble_assignment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
