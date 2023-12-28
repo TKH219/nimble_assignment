@@ -7,10 +7,13 @@
 
 import Foundation
 
-class Constants {
+class EnvironmentVariable {
     static let baseUrl = "https://survey-api.nimblehq.co/api/v1/"
     static let clientId = "ofzl-2h5ympKa0WqqTzqlVJUiRsxmXQmt5tkgrlWnOE"
     static let clientSecret = "lMQb900L-mTeU-FVTCwyhjsfBwRCxwwbCitPob96cuU"
+}
+
+class Constants {
     static let authInfomation = "authInfomation"
     static let requestTimeOutInterval = TimeInterval(10)
     static let totalItems = 10

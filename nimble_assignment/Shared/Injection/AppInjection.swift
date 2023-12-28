@@ -18,7 +18,7 @@ class AppInjection: Assembly {
         }
         
         container.register(AlamofireClient.self) { resolver in
-            AlamofireClient(withBaseUrl: Constants.baseUrl, userSessionDataStore: resolver.resolve(UserSessionDataStore.self)!)
+            AlamofireClient(withBaseUrl: EnvironmentVariable.baseUrl, userSessionDataStore: resolver.resolve(UserSessionDataStore.self)!)
         }
         
         // MARK: Repository

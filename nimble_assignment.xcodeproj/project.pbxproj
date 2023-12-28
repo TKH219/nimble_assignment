@@ -34,7 +34,7 @@
 		4E17D1B22B3D2F2D0042D287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39892B37E0F30053C98E /* Assets.xcassets */; };
 		4E17D1B32B3D2F2E0042D287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39892B37E0F30053C98E /* Assets.xcassets */; };
 		4E17D1B52B3D55130042D287 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */; };
-		4E17D1B72B3D55FC0042D287 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1B62B3D55FC0042D287 /* ErrorTracker.swift */; };
+		4E17D1B92B3D94CB0042D287 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1B82B3D94CB0042D287 /* Commons.swift */; };
 		4EFF39812B37E0F10053C98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39802B37E0F10053C98E /* AppDelegate.swift */; };
 		4EFF398A2B37E0F30053C98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39892B37E0F30053C98E /* Assets.xcassets */; };
 		4EFF398D2B37E0F30053C98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF398B2B37E0F30053C98E /* LaunchScreen.storyboard */; };
@@ -49,7 +49,6 @@
 		4EFF39C42B3805270053C98E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39C32B3805270053C98E /* LoginViewModel.swift */; };
 		4EFF39C92B380FF80053C98E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39C82B380FF80053C98E /* CustomTextField.swift */; };
 		4EFF39CB2B3810370053C98E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39CA2B3810370053C98E /* CustomButton.swift */; };
-		4EFF39CD2B38106F0053C98E /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39CC2B38106F0053C98E /* Commons.swift */; };
 		4EFF39D22B38150C0053C98E /* AppInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39D12B38150C0053C98E /* AppInjection.swift */; };
 		D2FA6D70B3ACFD4E55755CEB /* Pods_nimble_assignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E35FB5F71E0FFD3B33BB5F /* Pods_nimble_assignmentTests.framework */; };
 /* End PBXBuildFile section */
@@ -98,7 +97,7 @@
 		4E17D1AE2B3D28650042D287 /* ProfileSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSideMenuViewController.swift; sourceTree = "<group>"; };
 		4E17D1B02B3D289F0042D287 /* ProfileSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSideMenuViewModel.swift; sourceTree = "<group>"; };
 		4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		4E17D1B62B3D55FC0042D287 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		4E17D1B82B3D94CB0042D287 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		4EFF397D2B37E0F10053C98E /* nimble_assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble_assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFF39802B37E0F10053C98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFF39892B37E0F30053C98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,7 +116,6 @@
 		4EFF39C32B3805270053C98E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4EFF39C82B380FF80053C98E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4EFF39CA2B3810370053C98E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		4EFF39CC2B38106F0053C98E /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		4EFF39D12B38150C0053C98E /* AppInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjection.swift; sourceTree = "<group>"; };
 		567FDC266CF54A67B9638613 /* Pods-nimble_assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignment.debug.xcconfig"; path = "Target Support Files/Pods-nimble_assignment/Pods-nimble_assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		83136E81CB9D0ECC9C8A2828 /* Pods-nimble_assignment-nimble_assignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nimble_assignment-nimble_assignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-nimble_assignment-nimble_assignmentUITests/Pods-nimble_assignment-nimble_assignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -403,11 +401,11 @@
 		4EFF39C62B380FCA0053C98E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4E17D1B82B3D94CB0042D287 /* Commons.swift */,
 				4EFF39B52B38032B0053C98E /* Extensions */,
 				4E014DBC2B393145005DFF65 /* Constants */,
 				4EFF39D02B3815030053C98E /* Injection */,
 				4EFF39C72B380FE90053C98E /* UI */,
-				4EFF39CC2B38106F0053C98E /* Commons.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -418,7 +416,6 @@
 				4EFF39C82B380FF80053C98E /* CustomTextField.swift */,
 				4EFF39CA2B3810370053C98E /* CustomButton.swift */,
 				4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */,
-				4E17D1B62B3D55FC0042D287 /* ErrorTracker.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -717,7 +714,6 @@
 				4E014DDC2B3BD657005DFF65 /* GetListSurveyResponse.swift in Sources */,
 				4EFF39C22B38051E0053C98E /* LoginViewController.swift in Sources */,
 				4EFF39B42B3802BB0053C98E /* BaseViewModel.swift in Sources */,
-				4EFF39CD2B38106F0053C98E /* Commons.swift in Sources */,
 				4E17D1B12B3D289F0042D287 /* ProfileSideMenuViewModel.swift in Sources */,
 				4EFF39CB2B3810370053C98E /* CustomButton.swift in Sources */,
 				4E014DD62B3BD1D4005DFF65 /* SurveyListViewController.swift in Sources */,
@@ -725,8 +721,8 @@
 				4E014DE52B3BDA32005DFF65 /* SurveyRepository.swift in Sources */,
 				4E17D1A82B3C9FDD0042D287 /* DateView.swift in Sources */,
 				4EFF39B22B38029F0053C98E /* BaseViewController.swift in Sources */,
+				4E17D1B92B3D94CB0042D287 /* Commons.swift in Sources */,
 				4E014DCD2B39ACA1005DFF65 /* CustomError.swift in Sources */,
-				4E17D1B72B3D55FC0042D287 /* ErrorTracker.swift in Sources */,
 				4E014DE02B3BD9C6005DFF65 /* BaseResponse.swift in Sources */,
 				4E014DC42B39338D005DFF65 /* LoginResponse.swift in Sources */,
 				4E17D1B52B3D55130042D287 /* ActivityIndicator.swift in Sources */,
