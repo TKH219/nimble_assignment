@@ -38,10 +38,10 @@ class LoginViewModel: BaseViewModel {
                     print(response)
                     self.loginSuccess.onNext(true)
                 },
-                onError: { error in
+                onError: { (error) in
                     self.errorHandler(error)
                     print("LoginViewModel error", error.localizedDescription)
                 })
-            .dispose()
+            .disposed(by: rx.disposeBag)
     }
 }

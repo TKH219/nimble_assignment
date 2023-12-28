@@ -5,11 +5,11 @@
 //  Created by Trần Hà on 24/12/2023.
 //
 
-import Foundation
 import UIKit
-import Swinject
 import RxSwift
 import RxCocoa
+import NSObject_Rx
+import Swinject
 
 class BaseViewController<T: BaseViewModel>: UIViewController {
     
@@ -23,8 +23,9 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
             return .lightContent
      }
     
-    private lazy var loadingActivity: UIActivityIndicatorView = {
-        let activity = UIActivityIndicatorView(style: .medium)
+    lazy var loadingIndicator: UIActivityIndicatorView = {
+        let activity = UIActivityIndicatorView(style: .large)
+        activity.color = .white
         return activity
     }()
     
@@ -44,7 +45,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
         bindViewToViewModel()
         observeErrorMessages()
         bindViewModelToView()
-        configLoadingActivity()
+        addLoadingIndicator()
     }
     
     
@@ -63,9 +64,9 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
         }
     }
     
-    private func configLoadingActivity() {
-        view.addSubview(loadingActivity)
-        loadingActivity.snp.makeConstraints { make in
+    private func addLoadingIndicator() {
+        view.addSubview(loadingIndicator)
+        loadingIndicator.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
     }
@@ -76,22 +77,22 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
     }
     
     func bindViewModelToView() {
+        
         viewModel
             .activityIndicator
             .asObservable()
             .bind(to: isLoading)
             .disposed(by: disposeBag)
+        
         isLoading
             .distinctUntilChanged()
             .bind(onNext: { [weak self] loading in
                 guard let self = self else { return }
                 print(loading)
-                self.loadingActivity.isHidden = !loading
                 if (loading) {
-//                    self.showAlert(title: "Error", message: "error.localizedDescription")
-                    self.loadingActivity.startAnimating()
+                    self.loadingIndicator.startAnimating()
                 } else {
-                    self.loadingActivity.stopAnimating()
+                    self.loadingIndicator.stopAnimating()
                 }
             })
             .disposed(by: disposeBag)
@@ -110,13 +111,6 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
     }
     
     func bindViewToViewModel() {
-
-
-//        viewModel.error.drive(onNext: { [weak self] error in
-//            self?.onError(error: error)
-//        }).disposed(by: rx.disposeBag)
-
-        
     }
     
     func onError(_ customError: CustomError) {

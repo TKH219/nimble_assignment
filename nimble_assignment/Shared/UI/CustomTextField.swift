@@ -58,11 +58,9 @@ class CustomTextField: UITextField {
     func setPlaceHolder(_ text: String) {
         let attributes = [
             NSAttributedString.Key.foregroundColor: UIColor.lightGray,
-//            NSAttributedString.Key.font : .labelFontSize
         ]
         
         self.attributedPlaceholder = NSAttributedString(string: text, attributes:attributes)
-//        self.font = .labelFontSize
     }
     
     func setOverlay() {

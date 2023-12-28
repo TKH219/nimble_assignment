@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class SplashViewController: BaseViewController<SplashViewModel> {
-
+    
     lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named:"splash_screen_background")
@@ -28,7 +28,6 @@ class SplashViewController: BaseViewController<SplashViewModel> {
     }()
     
     override func setupView() {
-    
         self.view.addSubview(backgroundImageView)
         self.view.addSubview(logoImageView)
         self.backgroundImageView.snp.makeConstraints { (make) in

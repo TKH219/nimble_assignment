@@ -25,40 +25,23 @@ class UserSessionDataStoreImpl: UserSessionDataStore {
         guard let data = self.keychain[data: Constants.authInfomation] else {
             return nil
         }
-        
-//        var jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-//        let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-//        let decoder = JSONDecoder()
-//        let authInformation = try? decoder.decode(AuthenicationAttributes.self, from: jsonData)
-//        return authInformation
-        
-//        return Single<AuthenicationAttributes?>.create { seal in
-//            guard let data = self.keychain[data: Constants.authInfomation] else {
-//                seal(.failure(CustomError.unauthorized))
-//                return Disposables.create {}
-//            }
-//
-            do {
-                var jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-                let decoder = JSONDecoder()
-                let authInformation = try? decoder.decode(AuthenicationAttributes.self, from: jsonData)
-                return authInformation
-//                seal(.success(authInformation))
-            } catch {
-                return nil
-//                seal(.failure(CustomError.notFound))
-            }
-//
-//            return Disposables.create {}
-//        }
+        do {
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+            let decoder = JSONDecoder()
+            let authInformation = try? decoder.decode(AuthenicationAttributes.self, from: jsonData)
+            return authInformation
+            
+        } catch {
+            return nil
+            
+        }
     }
     
     func save(userSession: AuthenicationAttributes) {
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(userSession)
         keychain[data: Constants.authInfomation] = jsonData
-//        return self.readUserSession()
     }
     
     func delete() {

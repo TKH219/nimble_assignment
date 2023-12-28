@@ -15,7 +15,7 @@ class CustomButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.setTitleColor(.black, for: .normal) //.black_151A
+        self.setTitleColor(.black, for: .normal)
         self.layer.cornerRadius = 10
         self.addTarget(self, action: #selector(onTapButton), for: .touchUpInside)
     }

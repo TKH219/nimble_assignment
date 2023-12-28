@@ -66,9 +66,7 @@ class SurveyListViewModel: BaseViewModel {
         let page = (pagination.value?.page ?? 0) + 1
         surveyRepository
             .getListSurvey(page: page)
-//            .trackActivity(activityIndicator)
-//            .trackActivity(loading)
-//            .trackError(error)
+            .trackActivity(activityIndicator)
 //            .retry(when: { [weak self] error in
 //                return error.flatMapLatest { error -> Observable<Void> in
 //                    guard let self = self, let errorResponse = error as? ErrorResponse,
@@ -82,7 +80,7 @@ class SurveyListViewModel: BaseViewModel {
 //                        .mapToVoid()
 //                }
 //            })
-            .subscribe(onSuccess: { [weak self] (response: GetListSurveyResponse)  in
+            .subscribe(onNext: { [weak self] (response: GetListSurveyResponse)  in
                 guard let self = self else { return }
                 let responseSurveys = response.data.map { element in
                     return element.attributes
@@ -90,9 +88,11 @@ class SurveyListViewModel: BaseViewModel {
                 let list = loadMore ? self.surveys.value + responseSurveys : responseSurveys
                 self.surveys.accept(list)
                 //                self.pagination.accept(response.metadata)
-            }, onFailure: { customError in
-                print(customError)
-            })
+            }
+//                       onFailure: { customError in
+//                print(customError)
+//            }
+            )
 //            .disposed(by: rx.disposeBag)
     }
 }

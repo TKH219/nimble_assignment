@@ -27,8 +27,8 @@ class AuthenicationRepositoryImpl: AuthenicationRepository {
                 "email": email,
                 "password": password,
                 "grant_type": "password",
-                "client_id": "6GbE8dhoz519l2N_F99StqoOs6Tcmm1rXgda4q__rIw",
-                "client_secret": "_ayfIm7BeUAhx2W1OUqi20fwO3uNxfo1QstyKlFCgHw"
+                "client_id": EnvironmentVariable.clientId,
+                "client_secret": EnvironmentVariable.clientSecret
             ]
             
             
@@ -36,14 +36,15 @@ class AuthenicationRepositoryImpl: AuthenicationRepository {
                 .request(method: .post, path: "oauth/token", params: params)
                 .subscribe(
                     onSuccess: {(responseData: LoginResponse) in
-                        print("JSON: ", responseData)
                         self.userSessionDataStore.save(userSession: responseData.data.attributes)
                         single(.success(true))
                     },
                     onFailure: { error in
-                        print("AuthenicationRepositoryImpl Error: ", error)
                         single(.failure(error))
-                    })
+                    }
+                )
+            
+                .disposed(by: self.disposeBag)
             
             return Disposables.create {}
         }
@@ -52,6 +53,4 @@ class AuthenicationRepositoryImpl: AuthenicationRepository {
 //    func logout(token: String) -> RxSwift.Single<Void> {
 //
 //    }
-    
-    
 }
