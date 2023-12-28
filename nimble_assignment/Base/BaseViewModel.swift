@@ -14,9 +14,7 @@ class BaseViewModel: NSObject {
     
     let resolver: Resolver
     
-//    let loading = ActivityIndicator()
-
-//    let error = ErrorTracker()
+    let activityIndicator = ActivityIndicator()
     
     public var errorMessages: Observable<CustomError> {
         return errorMessagesSubject.asObserver()
@@ -27,5 +25,13 @@ class BaseViewModel: NSObject {
     init(resolver: Resolver) {
         self.resolver = resolver
     }
-
+    
+    func errorHandler(_ error: Error) {
+        if let error = error as? CustomError {
+            errorMessagesSubject.onNext(error)
+            return
+        }
+        
+        errorMessagesSubject.onNext(CustomError.unknown)
+    }
 }

@@ -40,3 +40,9 @@ struct AuthenicationAttributes: Codable {
         createdAt = try values.decode(Date.self, forKey: .createdAt)
     }
 }
+
+extension AuthenicationAttributes {
+    func getAccessToken() -> String? {
+        return "\(tokenType) \(accessToken)"
+    }
+}

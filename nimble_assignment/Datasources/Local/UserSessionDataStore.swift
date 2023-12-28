@@ -7,11 +7,11 @@
 
 import Foundation
 import KeychainAccess
-import PromiseKit
+import RxSwift
 
 protocol UserSessionDataStore {
-    func readUserSession() -> Promise<AuthenicationAttributes?>
-    func save(userSession: AuthenicationAttributes) -> Promise<AuthenicationAttributes?>
+    func readUserSession() -> AuthenicationAttributes?
+    func save(userSession: AuthenicationAttributes)
     func delete()
 }
 
@@ -21,26 +21,44 @@ class UserSessionDataStoreImpl: UserSessionDataStore {
         service: Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? ""
     )
     
-    func readUserSession() -> Promise<AuthenicationAttributes?> {
-        return Promise() { seal in
-            guard let data = keychain[data: Constants.authInfomation] else {
-                seal.reject(CustomError.unauthorized)
-                return
-            }
-           
-            var jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-            let decoder = JSONDecoder()
-            let authInformation = try decoder.decode(AuthenicationAttributes.self, from: jsonData)
-            seal.fulfill(authInformation)
+    func readUserSession() -> AuthenicationAttributes? {
+        guard let data = self.keychain[data: Constants.authInfomation] else {
+            return nil
         }
+        
+//        var jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+//        let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+//        let decoder = JSONDecoder()
+//        let authInformation = try? decoder.decode(AuthenicationAttributes.self, from: jsonData)
+//        return authInformation
+        
+//        return Single<AuthenicationAttributes?>.create { seal in
+//            guard let data = self.keychain[data: Constants.authInfomation] else {
+//                seal(.failure(CustomError.unauthorized))
+//                return Disposables.create {}
+//            }
+//
+            do {
+                var jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+                let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
+                let decoder = JSONDecoder()
+                let authInformation = try? decoder.decode(AuthenicationAttributes.self, from: jsonData)
+                return authInformation
+//                seal(.success(authInformation))
+            } catch {
+                return nil
+//                seal(.failure(CustomError.notFound))
+            }
+//
+//            return Disposables.create {}
+//        }
     }
     
-    func save(userSession: AuthenicationAttributes) -> Promise<AuthenicationAttributes?> {
+    func save(userSession: AuthenicationAttributes) {
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(userSession)
         keychain[data: Constants.authInfomation] = jsonData
-        return self.readUserSession()
+//        return self.readUserSession()
     }
     
     func delete() {

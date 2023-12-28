@@ -110,23 +110,24 @@ class LoginViewController: BaseViewController<LoginViewModel>, UITextFieldDelega
     }
     
     override func bindViewModelToView() {
+        super.bindViewModelToView()
         viewModel
             .loginSuccess
-          .asDriver(onErrorJustReturn: false)
-          .distinctUntilChanged()
-          .drive(onNext: { [weak self] isSuccess in
-            guard let strongSelf = self else {
-              return
-            }
-              
-              if (isSuccess) {
-                  strongSelf.navigationController?.setViewControllers(
-                      [strongSelf.resolver.resolve(SplashViewController.self)!],
-                      animated: false
-                  )
-              }
-          })
-          .disposed(by: disposeBag)
+            .asDriver(onErrorJustReturn: false)
+            .distinctUntilChanged()
+            .drive(onNext: { [weak self] isSuccess in
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                if (isSuccess) {
+                    strongSelf.navigationController?.setViewControllers(
+                        [strongSelf.resolver.resolve(SurveyListViewController.self)!],
+                        animated: false
+                    )
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     func bindEmailField() {
