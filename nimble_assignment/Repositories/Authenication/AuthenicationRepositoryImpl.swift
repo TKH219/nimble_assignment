@@ -49,8 +49,4 @@ class AuthenicationRepositoryImpl: AuthenicationRepository {
             return Disposables.create {}
         }
     }
-    
-//    func logout(token: String) -> RxSwift.Single<Void> {
-//
-//    }
 }

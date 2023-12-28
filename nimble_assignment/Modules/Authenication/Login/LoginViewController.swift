@@ -100,17 +100,13 @@ class LoginViewController: BaseViewController<LoginViewModel>, UITextFieldDelega
         }
     }
     
-    override func bindViewToViewModel() {
-        super.bindViewToViewModel()
+    override func bindViewModel() {
+        super.bindViewModel()
         bindEmailField()
         bindPasswordField()
         loginButton.addTarget(viewModel,
                               action: #selector(viewModel.signIn),
                               for: .touchUpInside)
-    }
-    
-    override func bindViewModelToView() {
-        super.bindViewModelToView()
         viewModel
             .loginSuccess
             .asDriver(onErrorJustReturn: false)

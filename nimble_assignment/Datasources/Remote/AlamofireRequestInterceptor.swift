@@ -36,7 +36,6 @@ class AlamofireRequestInterceptor: RequestInterceptor {
             guard let self = self, let attributes = response?.data.attributes else { return }
             
             if (isSuccess) {
-                print("REFRESH REFRESH")
                 self.storage.save(userSession: attributes)
                 completion(.retry)
             } else {
@@ -67,8 +66,6 @@ class AlamofireRequestInterceptor: RequestInterceptor {
                    headers: [:])
         .responseData { [weak self] response in
             guard let strongSelf = self else { return }
-            
-            print(response)
             switch response.result {
             case .success(let data):
                 do {

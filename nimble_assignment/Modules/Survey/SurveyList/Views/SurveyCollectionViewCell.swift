@@ -7,7 +7,6 @@
 
 import UIKit
 import Kingfisher
-import SkeletonView
 
 protocol ReusableCell {
     static var identifier: String { get }
@@ -41,10 +40,6 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
         label.font = .boldSystemFont(ofSize: 28)
         label.textColor = .white
         label.numberOfLines = 2
-        label.enableSkeletonAnimation(radius: 8)
-        label.linesCornerRadius = 8
-        label.skeletonTextNumberOfLines = 2
-        label.skeletonTextLineHeight = .fixed(20)
         return label
     }()
     
@@ -53,21 +48,7 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
         label.font = .systemFont(ofSize: 17)
         label.textColor = .white
         label.numberOfLines = 2
-        label.enableSkeletonAnimation(radius: 8)
-        label.linesCornerRadius = 8
-        label.skeletonTextNumberOfLines = 2
-        label.skeletonTextLineHeight = .fixed(20)
         return label
-    }()
-    
-    private lazy var takeSurveyButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("123123", for: .normal)
-//        button.setImage(UIImage(asset: .nextButton), for: .normal)
-//        button.rx.tap.subscribe(onNext: { [weak self] in
-//            self?.onTakeSurveyTap?()
-//        }).disposed(by: rx.disposeBag)
-        return button
     }()
     
     private lazy var gradientLayer: CAGradientLayer = {
@@ -98,7 +79,6 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
         contentView.addSubview(overlayView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
-        contentView.addSubview(takeSurveyButton)
         backgroundImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -114,31 +94,21 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
         
         descriptionLabel.snp.makeConstraints { make in
             make.left.equalTo(titleLabel)
-            make.right.equalTo(takeSurveyButton.snp.left).offset(-20)
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
         }
-        
-        takeSurveyButton.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-20)
-            make.bottom.equalTo(descriptionLabel)
-            make.size.equalTo(56)
-        }
-        contentView.enableSkeletonAnimation()
     }
     
     func bindData(survey: Survey?) {
         if let urlString = survey?.getHighResolutionCoverImageUrl(), let url = URL(string: urlString) {
-            backgroundImage.kf.setImage(with: url)//, placeholder: UIImage(asset: .darkGradient))
+            backgroundImage.kf.setImage(with: url)
         } else {
-//            backgroundImage.image = UIImage(asset: .darkGradient)
+            backgroundImage.image = UIImage(named: "login_background")
         }
-        takeSurveyButton.isHidden = survey == nil
+
         guard let survey = survey else {
-            contentView.startSkeleton()
-            titleLabel.startSkeleton()
             return
         }
-        contentView.stopSkeleton()
+
         titleLabel.text = survey.title
         descriptionLabel.text = survey.description
     }

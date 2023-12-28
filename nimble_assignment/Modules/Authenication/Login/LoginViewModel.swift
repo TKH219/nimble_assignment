@@ -28,19 +28,15 @@ class LoginViewModel: BaseViewModel {
     @objc
     public func signIn() {
         let (email, password) = getEmailPassword()
-        print(email)
-        print(password)
         resolver.resolve(AuthenicationRepository.self)!
             .signIn(email: email, password: password)
             .trackActivity(activityIndicator)
             .subscribe(
                 onNext: {(response) in
-                    print(response)
                     self.loginSuccess.onNext(true)
                 },
                 onError: { (error) in
                     self.errorHandler(error)
-                    print("LoginViewModel error", error.localizedDescription)
                 })
             .disposed(by: rx.disposeBag)
     }

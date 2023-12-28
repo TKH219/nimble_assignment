@@ -40,28 +40,33 @@ class SplashViewController: BaseViewController<SplashViewModel> {
             make.center.equalTo(self.backgroundImageView)
         }
     }
-    
-    override func bindViewToViewModel() {
-        super.bindViewToViewModel()
-//        guard let viewModel = viewModel as? SplashViewModel else {
-//            return
-//        }
-//        let input = SplashViewModel.Input(trigger: Driver.just(()))
-//        let output = viewModel.transform(input: input)
-//        output.gotoLogin.drive(onNext: { [weak self] in
-//            guard let self = self else { return }
-//            self.navigationController?.setViewControllers(
-//                [self.resolver.resolve(LoginViewController.self)!],
-//                animated: false
-//            )
-//        }).disposed(by: rx.disposeBag)
-//
-//        output.gotoSurveyList.drive(onNext: { [weak self] in
-//            guard let self = self else { return }
-//            self.navigationController?.setViewControllers(
-//                [self.resolver.resolve(SurveyListViewController.self)!],
-//                animated: false
-//            )
-//        }).disposed(by: rx.disposeBag)
+
+    override func bindViewModel() {
+        super.bindViewModel()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.viewModel.checkLoggedIn()
+            self.viewModel
+                .loggedIn
+                .asDriver(onErrorJustReturn: false)
+                .distinctUntilChanged()
+                .drive(onNext: { [weak self] isSuccess in
+                    guard let strongSelf = self else {
+                        return
+                    }
+                    
+                    if (isSuccess) {
+                        strongSelf.navigationController?.setViewControllers(
+                            [strongSelf.resolver.resolve(SurveyListViewController.self)!],
+                            animated: false
+                        )
+                    } else {
+                        strongSelf.navigationController?.setViewControllers(
+                            [strongSelf.resolver.resolve(LoginViewController.self)!],
+                            animated: false
+                        )
+                    }
+                })
+                .disposed(by: self.rx.disposeBag)
+        })
     }
 }

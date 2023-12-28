@@ -51,13 +51,12 @@ class AppInjection: Assembly {
                 resolver: resolver
             )
         }
-//
-//        container.register(SurveyDetailViewController.self) { (resolver, survey) in
-//            SurveyDetailViewController(
-//                viewModel: nil,
-//                resolver: resolver,
-//                survey: survey
-//            )
-//        }
+
+        container.register(SurveyDetailViewController.self) { resolver in
+            SurveyDetailViewController(
+                viewModel: SurveyDetailViewModel(resolver: resolver),
+                resolver: resolver
+            )
+        }
     }
 }

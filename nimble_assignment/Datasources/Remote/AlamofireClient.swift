@@ -38,7 +38,6 @@ class AlamofireClient: NSObject {
                 .validate(contentType: ["application/json"])
                 .validate(statusCode: [200])
                 .responseData { response in
-                    print(response)
                     switch response.result {
                     case .success(let data):
                         do {

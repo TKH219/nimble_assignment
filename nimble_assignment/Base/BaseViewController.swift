@@ -42,9 +42,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        bindViewToViewModel()
-        observeErrorMessages()
-        bindViewModelToView()
+        bindViewModel()
         addLoadingIndicator()
     }
     
@@ -56,7 +54,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
     
     func setupView() {
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.barStyle = .default
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         if #available(iOS 11.0, *) {
@@ -71,13 +69,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
         }
     }
     
-    
-    func observeErrorMessages() {
-
-    }
-    
-    func bindViewModelToView() {
-        
+    func bindViewModel() {
         viewModel
             .activityIndicator
             .asObservable()
@@ -88,7 +80,6 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
             .distinctUntilChanged()
             .bind(onNext: { [weak self] loading in
                 guard let self = self else { return }
-                print(loading)
                 if (loading) {
                     self.loadingIndicator.startAnimating()
                 } else {
@@ -108,9 +99,6 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
                 strongSelf.onError(customErrorMessage)
             })
             .disposed(by: disposeBag)
-    }
-    
-    func bindViewToViewModel() {
     }
     
     func onError(_ customError: CustomError) {
