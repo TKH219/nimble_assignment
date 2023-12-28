@@ -14,39 +14,7 @@ class LoginViewModel: BaseViewModel {
     public let emailInput = BehaviorSubject<String>(value: "")
     public let passwordInput = BehaviorSubject<String>(value: "")
     public let loginSuccess = BehaviorSubject<Bool>(value: false)
-    
-    public let signInActivityIndicatorAnimating = BehaviorSubject<Bool>(value: false)
-    
-    @objc
-    public func signIn() {
-        indicateSigningIn()
-        let (email, password) = getEmailPassword()
-        print(email)
-        print(password)
-        resolver.resolve(AuthenicationRepository.self)!.signIn(email: email, password: password).done { response in
-            print(response)
-            self.loginSuccess.onNext(true)
-        }.catch {customError in
         
-//                errorMessages
-//              .asDriver(onErrorJustReturn: false)
-//              .distinctUntilChanged()
-//              .drive(onNext: { [weak self] isSuccess in
-//                guard let strongSelf = self else {
-//                  return
-//                }
-//              })
-//              .disposed(by: DisposeBag())
-        }
-    }
-    
-    func indicateSigningIn() {
-//        emailInputEnabled.onNext(false)
-//        passwordInputEnabled.onNext(false)
-//        signInButtonEnabled.onNext(false)
-        signInActivityIndicatorAnimating.onNext(true)
-    }
-    
     func getEmailPassword() -> (String, String) {
         do {
             let email = try emailInput.value()
@@ -55,5 +23,25 @@ class LoginViewModel: BaseViewModel {
         } catch {
             fatalError("Error reading email and password from behavior subjects.")
         }
+    }
+    
+    @objc
+    public func signIn() {
+        let (email, password) = getEmailPassword()
+        print(email)
+        print(password)
+        resolver.resolve(AuthenicationRepository.self)!
+            .signIn(email: email, password: password)
+            .trackActivity(activityIndicator)
+            .subscribe(
+                onNext: {(response) in
+                    print(response)
+                    self.loginSuccess.onNext(true)
+                },
+                onError: { error in
+                    self.errorHandler(error)
+                    print("LoginViewModel error", error.localizedDescription)
+                })
+            .dispose()
     }
 }

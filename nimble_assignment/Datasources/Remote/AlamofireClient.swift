@@ -14,45 +14,52 @@ class AlamofireClient: NSObject {
     
     var baseUrl:String = ""
     
-    init(withBaseUrl:String) {
-        super.init()
-        baseUrl = withBaseUrl
+    private let userSessionDataStore: UserSessionDataStore
+    
+    init(withBaseUrl:String, userSessionDataStore: UserSessionDataStore) {
+        self.userSessionDataStore = userSessionDataStore
+        self.baseUrl = withBaseUrl
     }
     
-    public func request<T: Decodable>(method: HTTPMethod,path: String, params: Dictionary<String, Any>) -> Promise<T> {
-        return Promise { seal in
+    public func request<T: Decodable>(method: HTTPMethod,path: String, params: Dictionary<String, Any>) -> Single<T> {
+        return Single<T>.create { [weak self] single in
+            guard let self = self else { return Disposables.create {} }
             let urlString: String = "\(self.baseUrl)\(path)"
             let url =  URL(string: urlString)!
             
-            AF.request(url, method: method, parameters: params, encoding: JSONEncoding.default, headers: self.createHeaderRequest())
+            let task = AF.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: self.createHeaderRequest())
                 .validate(contentType: ["application/json"])
                 .responseData { response in
                     print(response)
                     switch response.result {
                     case .success(let data):
                         do {
-                            var jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+                            let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
                             if !JSONSerialization.isValidJSONObject(jsonObject) {
-                                return seal.reject(CustomError.invalidJson)
+                                single(.failure(CustomError.invalidJson))
                             }
                             
                             let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
                             let decoder = JSONDecoder()
                             let response = try decoder.decode(T.self, from: jsonData)
-                            seal.fulfill(response)
+                            single(.success(response))
                         } catch {
-                            seal.reject(CustomError.invalidJson)
+                            single(.failure(CustomError.invalidJson))
                         }
                     case .failure(_):
                         let errorEnum = self.errorHandle(statusCode: response.response?.statusCode)
-                        return seal.reject(errorEnum)
+                        single(.failure(errorEnum))
                     }
                 }
+                
+            task.resume()
+            return Disposables.create { task.cancel() }
         }
     }
     
     func createHeaderRequest() -> HTTPHeaders {
-        return HTTPHeaders([:])
+        let userSession = userSessionDataStore.readUserSession()
+        return HTTPHeaders(["Authorization": userSession?.getAccessToken() ?? ""])
     }
     
     func errorHandle(statusCode: Int?) -> CustomError {

@@ -25,7 +25,9 @@ enum CustomError: Int, Error {
             return "Forbidden"
         case .notFound:
             return "Not Found"
-        case .unknown, .invalidJson:
+        case .invalidJson:
+            return "Invalid Json"
+        case .unknown:
             return "General Error"
         }
     }

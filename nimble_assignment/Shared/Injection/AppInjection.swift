@@ -12,22 +12,25 @@ class AppInjection: Assembly {
     
     func assemble(container: Container) {
         
-        container.register(AlamofireClient.self) { resolver in
-            AlamofireClient(withBaseUrl: Constants.baseUrl)
-        }
-        
+        // MARK: Services
         container.register(UserSessionDataStore.self) { resolver in
             UserSessionDataStoreImpl()
         }
         
+        container.register(AlamofireClient.self) { resolver in
+            AlamofireClient(withBaseUrl: Constants.baseUrl, userSessionDataStore: resolver.resolve(UserSessionDataStore.self)!)
+        }
+        
+        // MARK: Repository
         container.register(AuthenicationRepository.self) { resolver in
-            AuthenicationRepositoryImpl(alamofireClient: resolver.resolve(AlamofireClient.self)!)
+            AuthenicationRepositoryImpl(alamofireClient: resolver.resolve(AlamofireClient.self)!, userSessionDataStore: resolver.resolve(UserSessionDataStore.self)!)
         }.inObjectScope(.container)
         
         container.register(SurveyRepository.self) { resolver in
             SurveyRepositoryImpl(alamofireClient: resolver.resolve(AlamofireClient.self)!)
         }.inObjectScope(.container)
         
+        // MARK: ViewController
         container.register(SplashViewController.self) { resolver in
             SplashViewController(
                 viewModel: SplashViewModel(resolver: resolver),
@@ -42,12 +45,12 @@ class AppInjection: Assembly {
             )
         }
         
-//        container.register(SurveyListViewController.self) { resolver in
-//            SurveyListViewController(
-//                viewModel: SurveyListViewModel(resolver: resolver),
-//                resolver: resolver
-//            )
-//        }
+        container.register(SurveyListViewController.self) { resolver in
+            SurveyListViewController(
+                viewModel: SurveyListViewModel(resolver: resolver),
+                resolver: resolver
+            )
+        }
 //
 //        container.register(SurveyDetailViewController.self) { (resolver, survey) in
 //            SurveyDetailViewController(

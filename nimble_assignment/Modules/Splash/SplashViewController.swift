@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 
 class SplashViewController: BaseViewController<SplashViewModel> {
-//    private lazy var backgroundImageView = UIImageView(asset: .splash_screen_2)
-//    private lazy var logoImageView = UIImageView(asset: .nimble_lo)
-    
+
     lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named:"splash_screen_background")
