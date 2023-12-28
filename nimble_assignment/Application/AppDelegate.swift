@@ -13,17 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
-    static let assembler = Assembler([AppInjection()])//, ServiceAssembly()])
+    static let assembler = Assembler([AppInjection()])
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        LibsManager.setupLibs()
         launchStartPage()
         return true
     }
     
     private func launchStartPage() {
         window = UIWindow()
-        let splashVC = AppDelegate.assembler.resolver.resolve(SurveyListViewController.self)!
+        let splashVC = AppDelegate.assembler.resolver.resolve(SplashViewController.self)!
         let nav = UINavigationController(rootViewController: splashVC)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

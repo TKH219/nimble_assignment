@@ -11,6 +11,5 @@ import PromiseKit
 
 protocol AuthenicationRepository {
     func signIn(email: String, password: String) -> Single<Bool>
-//    func logout(token: String) -> Single<Void>
 }
 

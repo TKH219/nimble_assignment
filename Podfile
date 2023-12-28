@@ -18,7 +18,6 @@ target 'nimble_assignment' do
   pod 'IQKeyboardManagerSwift'
   pod 'KeychainAccess'
   pod 'Kingfisher'
-  pod 'SkeletonView'
   pod 'SideMenu'
   pod 'Connectivity'
 

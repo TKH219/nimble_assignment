@@ -16,7 +16,7 @@
 		4E014DC92B393526005DFF65 /* AuthenicationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DC82B393526005DFF65 /* AuthenicationRepositoryImpl.swift */; };
 		4E014DCB2B393A5A005DFF65 /* AlamofireClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DCA2B393A5A005DFF65 /* AlamofireClient.swift */; };
 		4E014DCD2B39ACA1005DFF65 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DCC2B39ACA1005DFF65 /* CustomError.swift */; };
-		4E014DD22B3A89B4005DFF65 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD12B3A89B4005DFF65 /* UIViewController+.swift */; };
+		4E014DD22B3A89B4005DFF65 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD12B3A89B4005DFF65 /* UIViewController+Extension.swift */; };
 		4E014DD62B3BD1D4005DFF65 /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD52B3BD1D4005DFF65 /* SurveyListViewController.swift */; };
 		4E014DD82B3BD1E0005DFF65 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD72B3BD1E0005DFF65 /* SurveyListViewModel.swift */; };
 		4E014DDA2B3BD630005DFF65 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DD92B3BD630005DFF65 /* Metadata.swift */; };
@@ -26,9 +26,13 @@
 		4E014DE32B3BDA22005DFF65 /* SurveyRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DE22B3BDA22005DFF65 /* SurveyRepositoryImpl.swift */; };
 		4E014DE52B3BDA32005DFF65 /* SurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DE42B3BDA32005DFF65 /* SurveyRepository.swift */; };
 		4E014DEA2B3BE2A2005DFF65 /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E014DE92B3BE2A2005DFF65 /* UserSessionDataStore.swift */; };
-		4E17D1A82B3C9FDD0042D287 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1A72B3C9FDD0042D287 /* DateView.swift */; };
+		4E10377E2B3DFA8B00FCBBB8 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10377D2B3DFA8B00FCBBB8 /* TitleLabel.swift */; };
+		4E1037802B3DFACA00FCBBB8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E10377F2B3DFACA00FCBBB8 /* Date+Extension.swift */; };
+		4E1037822B3DFB2100FCBBB8 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1037812B3DFB2100FCBBB8 /* RoundedButton.swift */; };
+		4E1037842B3DFB9600FCBBB8 /* DateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1037832B3DFB9600FCBBB8 /* DateTimeFormat.swift */; };
+		4E1037872B3DFDF800FCBBB8 /* SurveyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1037862B3DFDF800FCBBB8 /* SurveyDetailViewController.swift */; };
+		4E1037892B3DFE1900FCBBB8 /* SurveyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1037882B3DFE1900FCBBB8 /* SurveyDetailViewModel.swift */; };
 		4E17D1AA2B3CA1260042D287 /* SurveyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1A92B3CA1260042D287 /* SurveyCollectionViewCell.swift */; };
-		4E17D1AC2B3CA1C40042D287 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1AB2B3CA1C40042D287 /* UIView+.swift */; };
 		4E17D1AF2B3D28650042D287 /* ProfileSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1AE2B3D28650042D287 /* ProfileSideMenuViewController.swift */; };
 		4E17D1B12B3D289F0042D287 /* ProfileSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1B02B3D289F0042D287 /* ProfileSideMenuViewModel.swift */; };
 		4E17D1B22B3D2F2D0042D287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39892B37E0F30053C98E /* Assets.xcassets */; };
@@ -82,7 +86,7 @@
 		4E014DC82B393526005DFF65 /* AuthenicationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenicationRepositoryImpl.swift; sourceTree = "<group>"; };
 		4E014DCA2B393A5A005DFF65 /* AlamofireClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClient.swift; sourceTree = "<group>"; };
 		4E014DCC2B39ACA1005DFF65 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		4E014DD12B3A89B4005DFF65 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		4E014DD12B3A89B4005DFF65 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4E014DD52B3BD1D4005DFF65 /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
 		4E014DD72B3BD1E0005DFF65 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
 		4E014DD92B3BD630005DFF65 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
@@ -92,9 +96,13 @@
 		4E014DE22B3BDA22005DFF65 /* SurveyRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepositoryImpl.swift; sourceTree = "<group>"; };
 		4E014DE42B3BDA32005DFF65 /* SurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepository.swift; sourceTree = "<group>"; };
 		4E014DE92B3BE2A2005DFF65 /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
-		4E17D1A72B3C9FDD0042D287 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		4E10377D2B3DFA8B00FCBBB8 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		4E10377F2B3DFACA00FCBBB8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		4E1037812B3DFB2100FCBBB8 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		4E1037832B3DFB9600FCBBB8 /* DateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormat.swift; sourceTree = "<group>"; };
+		4E1037862B3DFDF800FCBBB8 /* SurveyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailViewController.swift; sourceTree = "<group>"; };
+		4E1037882B3DFE1900FCBBB8 /* SurveyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailViewModel.swift; sourceTree = "<group>"; };
 		4E17D1A92B3CA1260042D287 /* SurveyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCollectionViewCell.swift; sourceTree = "<group>"; };
-		4E17D1AB2B3CA1C40042D287 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		4E17D1AE2B3D28650042D287 /* ProfileSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSideMenuViewController.swift; sourceTree = "<group>"; };
 		4E17D1B02B3D289F0042D287 /* ProfileSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSideMenuViewModel.swift; sourceTree = "<group>"; };
 		4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				4E014DBD2B393159005DFF65 /* Constants.swift */,
+				4E1037832B3DFB9600FCBBB8 /* DateTimeFormat.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 		4E014DD32B3BCB4F005DFF65 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				4E1037852B3DFDCD00FCBBB8 /* SurveyDetail */,
 				4E014DD42B3BD1AF005DFF65 /* SurveyList */,
 			);
 			path = Survey;
@@ -247,10 +257,18 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
+		4E1037852B3DFDCD00FCBBB8 /* SurveyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4E1037862B3DFDF800FCBBB8 /* SurveyDetailViewController.swift */,
+				4E1037882B3DFE1900FCBBB8 /* SurveyDetailViewModel.swift */,
+			);
+			path = SurveyDetail;
+			sourceTree = "<group>";
+		};
 		4E17D1A62B3C9FCE0042D287 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4E17D1A72B3C9FDD0042D287 /* DateView.swift */,
 				4E17D1A92B3CA1260042D287 /* SurveyCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -334,8 +352,8 @@
 		4EFF39B52B38032B0053C98E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4E014DD12B3A89B4005DFF65 /* UIViewController+.swift */,
-				4E17D1AB2B3CA1C40042D287 /* UIView+.swift */,
+				4E014DD12B3A89B4005DFF65 /* UIViewController+Extension.swift */,
+				4E10377F2B3DFACA00FCBBB8 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +437,8 @@
 				4EFF39C82B380FF80053C98E /* CustomTextField.swift */,
 				4EFF39CA2B3810370053C98E /* CustomButton.swift */,
 				4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */,
+				4E10377D2B3DFA8B00FCBBB8 /* TitleLabel.swift */,
+				4E1037812B3DFB2100FCBBB8 /* RoundedButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -715,23 +735,26 @@
 				4EFF39D22B38150C0053C98E /* AppInjection.swift in Sources */,
 				4E014DC62B3934FE005DFF65 /* AuthenicationAttributes.swift in Sources */,
 				4E014DDC2B3BD657005DFF65 /* GetListSurveyResponse.swift in Sources */,
+				4E1037822B3DFB2100FCBBB8 /* RoundedButton.swift in Sources */,
 				4EFF39C22B38051E0053C98E /* LoginViewController.swift in Sources */,
 				4EFF39B42B3802BB0053C98E /* BaseViewModel.swift in Sources */,
 				4E17D1B12B3D289F0042D287 /* ProfileSideMenuViewModel.swift in Sources */,
 				4EFF39CB2B3810370053C98E /* CustomButton.swift in Sources */,
 				4E014DD62B3BD1D4005DFF65 /* SurveyListViewController.swift in Sources */,
 				4E17D1AF2B3D28650042D287 /* ProfileSideMenuViewController.swift in Sources */,
+				4E1037802B3DFACA00FCBBB8 /* Date+Extension.swift in Sources */,
 				4E014DE52B3BDA32005DFF65 /* SurveyRepository.swift in Sources */,
-				4E17D1A82B3C9FDD0042D287 /* DateView.swift in Sources */,
+				4E1037872B3DFDF800FCBBB8 /* SurveyDetailViewController.swift in Sources */,
 				4EFF39B22B38029F0053C98E /* BaseViewController.swift in Sources */,
 				4E17D1B92B3D94CB0042D287 /* Commons.swift in Sources */,
 				4E014DCD2B39ACA1005DFF65 /* CustomError.swift in Sources */,
 				4E014DE02B3BD9C6005DFF65 /* BaseResponse.swift in Sources */,
 				4E014DC42B39338D005DFF65 /* LoginResponse.swift in Sources */,
+				4E1037842B3DFB9600FCBBB8 /* DateTimeFormat.swift in Sources */,
+				4E1037892B3DFE1900FCBBB8 /* SurveyDetailViewModel.swift in Sources */,
 				4E17D1B52B3D55130042D287 /* ActivityIndicator.swift in Sources */,
 				4E014DCB2B393A5A005DFF65 /* AlamofireClient.swift in Sources */,
 				4E014DEA2B3BE2A2005DFF65 /* UserSessionDataStore.swift in Sources */,
-				4E17D1AC2B3CA1C40042D287 /* UIView+.swift in Sources */,
 				4E17D1BB2B3DE14F0042D287 /* AlamofireRequestInterceptor.swift in Sources */,
 				4EFF39C42B3805270053C98E /* LoginViewModel.swift in Sources */,
 				4EFF39C92B380FF80053C98E /* CustomTextField.swift in Sources */,
@@ -745,7 +768,8 @@
 				4E014DDA2B3BD630005DFF65 /* Metadata.swift in Sources */,
 				4E014DC92B393526005DFF65 /* AuthenicationRepositoryImpl.swift in Sources */,
 				4E014DDE2B3BD69E005DFF65 /* Survey.swift in Sources */,
-				4E014DD22B3A89B4005DFF65 /* UIViewController+.swift in Sources */,
+				4E10377E2B3DFA8B00FCBBB8 /* TitleLabel.swift in Sources */,
+				4E014DD22B3A89B4005DFF65 /* UIViewController+Extension.swift in Sources */,
 				4E014DBE2B393159005DFF65 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,7 +944,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = nimble_assignment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -949,7 +973,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = nimble_assignment/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

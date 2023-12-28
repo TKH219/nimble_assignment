@@ -5,14 +5,6 @@
 //  Created by Trần Hà on 25/12/2023.
 //
 
-//import Foundation
-//
-//struct LoginResponse: Codable {
-//    var id: String?
-//    var type: String?
-//    var attributes: AuthenicationAttributes?
-//}
-
 import Foundation
 
 struct LoginResponse: Decodable {
