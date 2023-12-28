@@ -12,23 +12,31 @@ import PromiseKit
 
 class AlamofireClient: NSObject {
     
-    var baseUrl:String = ""
+    var baseUrl: String = ""
     
     private let userSessionDataStore: UserSessionDataStore
-    
+    var alamofireRequestInterceptor: AlamofireRequestInterceptor
     init(withBaseUrl:String, userSessionDataStore: UserSessionDataStore) {
         self.userSessionDataStore = userSessionDataStore
         self.baseUrl = withBaseUrl
+        self.alamofireRequestInterceptor = AlamofireRequestInterceptor(storage: userSessionDataStore)
     }
     
-    public func request<T: Decodable>(method: HTTPMethod,path: String, params: Dictionary<String, Any>) -> Single<T> {
+    public func request<T: Decodable>(
+        method: HTTPMethod,
+        path: String,
+        params: Dictionary<String, Any>) -> Single<T> {
         return Single<T>.create { [weak self] single in
             guard let self = self else { return Disposables.create {} }
             let urlString: String = "\(self.baseUrl)\(path)"
             let url =  URL(string: urlString)!
-            
-            let task = AF.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: self.createHeaderRequest())
+            let task = AF.request(url,
+                                  method: method,
+                                  parameters: params,
+                                  encoding: URLEncoding.default,
+                                  interceptor: self.alamofireRequestInterceptor)
                 .validate(contentType: ["application/json"])
+                .validate(statusCode: [200])
                 .responseData { response in
                     print(response)
                     switch response.result {
@@ -51,15 +59,10 @@ class AlamofireClient: NSObject {
                         single(.failure(errorEnum))
                     }
                 }
-                
+            
             task.resume()
             return Disposables.create { task.cancel() }
         }
-    }
-    
-    func createHeaderRequest() -> HTTPHeaders {
-        let userSession = userSessionDataStore.readUserSession()
-        return HTTPHeaders(["Authorization": userSession?.getAccessToken() ?? ""])
     }
     
     func errorHandle(statusCode: Int?) -> CustomError {

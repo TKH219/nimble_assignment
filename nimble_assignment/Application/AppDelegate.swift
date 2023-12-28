@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func launchStartPage() {
         window = UIWindow()
-        let splashVC = AppDelegate.assembler.resolver.resolve(LoginViewController.self)!
+        let splashVC = AppDelegate.assembler.resolver.resolve(SurveyListViewController.self)!
         let nav = UINavigationController(rootViewController: splashVC)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
