@@ -25,8 +25,21 @@ class LoginViewModel: BaseViewModel {
         }
     }
     
+    func validation() -> Bool {
+        let (email, password) = getEmailPassword()
+        return Validator.isValidEmail(email) && Validator.isValidPassword(password)
+    }
+    
     @objc
     public func signIn() {
+        
+        let isValid = validation()
+        
+        if (!isValid) {
+            self.errorHandler("Invalid email or password.\nPlease check it again")
+            return
+        }
+        
         let (email, password) = getEmailPassword()
         resolver.resolve(AuthenicationRepository.self)!
             .signIn(email: email, password: password)
@@ -36,8 +49,25 @@ class LoginViewModel: BaseViewModel {
                     self.loginSuccess.onNext(true)
                 },
                 onError: { (error) in
-                    self.errorHandler(error)
+                    self.handleErrorMessage(error)
                 })
             .disposed(by: rx.disposeBag)
+    }
+    
+    func handleErrorMessage(_ error: Error) {
+        if let error = error as? CustomError {
+            switch (error) {
+            case .badRequest:
+                self.errorHandler("Your email or password is incorrect.\nPlease try again.")
+                break
+            default:
+                self.errorHandler(error.localizedDescription)
+                break
+            }
+            
+            return
+        }
+        
+        errorMessagesSubject.onNext(error.localizedDescription)
     }
 }

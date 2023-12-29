@@ -98,6 +98,7 @@ class LoginViewModelTests: QuickSpec {
                 it("expected login successful") {
                     email.onNext("validEmail@email.com")
                     password.onNext("validPassword")
+                    viewModel.signIn()
                     expect(isLoginError).to(beNil())
                     expect(isLoginSuccess).to(beTrue())
                 }

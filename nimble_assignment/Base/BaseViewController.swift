@@ -101,7 +101,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func onError(_ customError: CustomError) {
-        showAlert(title: "Error \(customError.rawValue)", message: customError.localizedDescription)
+    func onError(_ errorMessage: String?) {
+        showAlert(title: "Error", message: errorMessage)
     }
 }

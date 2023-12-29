@@ -26,7 +26,7 @@ class SurveyListViewModel: BaseViewModel {
                     self.surveys.accept(responseSurveys)
                 },
                 onError: { (error) in
-                    self.errorHandler(error)
+                    self.errorHandler(error.localizedDescription)
                 }
             )
             .disposed(by: rx.disposeBag)

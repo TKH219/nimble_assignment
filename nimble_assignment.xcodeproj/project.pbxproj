@@ -45,6 +45,7 @@
 		4E17D1B52B3D55130042D287 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */; };
 		4E17D1B92B3D94CB0042D287 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1B82B3D94CB0042D287 /* Commons.swift */; };
 		4E17D1BB2B3DE14F0042D287 /* AlamofireRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17D1BA2B3DE14F0042D287 /* AlamofireRequestInterceptor.swift */; };
+		4EE602C82B3ECA7300C87C38 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE602C72B3ECA7300C87C38 /* Validator.swift */; };
 		4EFF39812B37E0F10053C98E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF39802B37E0F10053C98E /* AppDelegate.swift */; };
 		4EFF398A2B37E0F30053C98E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF39892B37E0F30053C98E /* Assets.xcassets */; };
 		4EFF398D2B37E0F30053C98E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF398B2B37E0F30053C98E /* LaunchScreen.storyboard */; };
@@ -116,6 +117,7 @@
 		4E17D1B42B3D55130042D287 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		4E17D1B82B3D94CB0042D287 /* Commons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		4E17D1BA2B3DE14F0042D287 /* AlamofireRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequestInterceptor.swift; sourceTree = "<group>"; };
+		4EE602C72B3ECA7300C87C38 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		4EFF397D2B37E0F10053C98E /* nimble_assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nimble_assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFF39802B37E0F10053C98E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EFF39892B37E0F30053C98E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 		4EFF39B62B3803320053C98E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4EE602C72B3ECA7300C87C38 /* Validator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				4EFF39C92B380FF80053C98E /* CustomTextField.swift in Sources */,
 				4E17D1AA2B3CA1260042D287 /* SurveyCollectionViewCell.swift in Sources */,
 				4E014DE32B3BDA22005DFF65 /* SurveyRepositoryImpl.swift in Sources */,
+				4EE602C82B3ECA7300C87C38 /* Validator.swift in Sources */,
 				4EFF39BD2B38041E0053C98E /* SplashViewModel.swift in Sources */,
 				4E014DC22B39331D005DFF65 /* AuthenicationRepository.swift in Sources */,
 				4E014DD82B3BD1E0005DFF65 /* SurveyListViewModel.swift in Sources */,
