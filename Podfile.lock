@@ -1,24 +1,11 @@
 PODS:
   - Alamofire (5.6.4)
-  - Connectivity (5.0.0)
-  - Cuckoo (1.10.3):
-    - Cuckoo/Swift (= 1.10.3)
-  - Cuckoo/Swift (1.10.3)
   - IQKeyboardManagerSwift (6.5.11)
   - KeychainAccess (4.2.2)
   - Kingfisher (6.3.1)
   - Nimble (10.0.0)
   - "NSObject+Rx (5.2.2)":
     - RxSwift (~> 6.2)
-  - PromiseKit (8.1.1):
-    - PromiseKit/CorePromise (= 8.1.1)
-    - PromiseKit/Foundation (= 8.1.1)
-    - PromiseKit/UIKit (= 8.1.1)
-  - PromiseKit/CorePromise (8.1.1)
-  - PromiseKit/Foundation (8.1.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (8.1.1):
-    - PromiseKit/CorePromise
   - Quick (5.0.1)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -35,14 +22,11 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 5.6.4)
-  - Connectivity
-  - Cuckoo
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher
   - Nimble
   - "NSObject+Rx"
-  - PromiseKit (~> 8)
   - Quick
   - RxCocoa (= 6.5.0)
   - RxGesture
@@ -54,14 +38,11 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Connectivity
-    - Cuckoo
     - IQKeyboardManagerSwift
     - KeychainAccess
     - Kingfisher
     - Nimble
     - "NSObject+Rx"
-    - PromiseKit
     - Quick
     - RxCocoa
     - RxGesture
@@ -73,14 +54,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  Connectivity: e990703fb8d8db54649ea05facac92000cc0f3eb
-  Cuckoo: 930598bd4ae95860c658b3eea30903d946ebef36
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
-  PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
@@ -90,6 +68,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Swinject: 893c9a543000ac2f10ee4cbaf0933c6992c935d5
 
-PODFILE CHECKSUM: 3d97da5f168730f0c83f68406d66b50cbcd4bb36
+PODFILE CHECKSUM: 69510fe8eefee2deb3900552536be59f48188f79
 
 COCOAPODS: 1.14.3
