@@ -68,6 +68,6 @@ class LoginViewModel: BaseViewModel {
             return
         }
         
-        errorMessagesSubject.onNext(error.localizedDescription)
+        super.errorHandler(error.localizedDescription)
     }
 }

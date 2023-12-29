@@ -15,12 +15,10 @@ import RxSwift
 class MockAuthenicationRepository: AuthenicationRepository {
     func signIn(email: String, password: String) -> Single<Bool> {
         return Single<Bool>.create { single in
-            if (email.isEmpty || password.isEmpty || email.contains("wrong") || password.contains("wrong")) {
-                single(.failure(CustomError.badRequest))
-            }
-            
-            if (email.contains("valid") && password.contains("valid")) {
+            if (email == "validEmail@email.com" && password == "validPassword") {
                 single(.success(true))
+            } else {
+                single(.failure(CustomError.badRequest))
             }
             
             return Disposables.create {}
