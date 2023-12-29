@@ -19,14 +19,12 @@ target 'nimble_assignment' do
   pod 'KeychainAccess'
   pod 'Kingfisher'
   pod 'SideMenu'
-  pod 'Connectivity'
 
   target 'nimble_assignmentTests' do
     inherit! :search_paths
     survey_pods
     pod 'Nimble'
     pod 'Quick'
-    pod 'Cuckoo'
   end
 
   target 'nimble_assignmentUITests' do
