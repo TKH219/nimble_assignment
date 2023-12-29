@@ -15,19 +15,15 @@ class LoginViewModelTests: QuickSpec {
     
     override func spec() {
 
-        var email: BehaviorSubject<String>!
-        var password: BehaviorSubject<String>!
         var container: Container!
         var isLoginSuccess: Bool?
-        var isLoginError: Error?
+        var isLoginError: String?
         var viewModel: LoginViewModel!
         var disposeBag: DisposeBag!
 
         describe("LoginViewModelSpecs") {
             
             beforeEach {
-                email = BehaviorSubject<String>(value: "")
-                password = BehaviorSubject<String>(value: "")
                 container = self.setupContainer()
                 viewModel = LoginViewModel(resolver: container)
                 disposeBag = DisposeBag()
@@ -36,8 +32,8 @@ class LoginViewModelTests: QuickSpec {
                     isLoginSuccess = isSuccess
                 }.disposed(by: disposeBag)
                 
-                viewModel.errorMessages.asDriver(onErrorJustReturn: CustomError.unknown).drive { customError in
-                    isLoginError = customError
+                viewModel.errorMessages.asDriver(onErrorJustReturn: CustomError.unknown.localizedDescription).drive { customErrorMessage in
+                    isLoginError = customErrorMessage
                 }.disposed(by: disposeBag)
             }
             
@@ -48,34 +44,36 @@ class LoginViewModelTests: QuickSpec {
                 isLoginError = nil
             }
             
+            func updateEmailAndPasswordInput(_ email: String, _ password: String) {
+                viewModel.emailInput.onNext(email)
+                viewModel.passwordInput.onNext(password)
+            }
+            
             context("validate email and password") {
                 
                 it("empty email - expected fail") {
-                    email.onNext("")
-                    password.onNext("not an empty string")
+                    updateEmailAndPasswordInput("", "this is password")
                     viewModel.signIn()
                     expect(isLoginSuccess).to(beFalse())
                     expect(isLoginError).notTo(beNil())
                 }
                 
                 it("invalid email - expected fail") {
-                    email.onNext("this is an invalid email")
-                    password.onNext("not an empty string")
+                    updateEmailAndPasswordInput("this is an wrong email", "this is password")
+                    viewModel.signIn()
                     expect(isLoginSuccess).to(beFalse())
                     expect(isLoginError).notTo(beNil())
                 }
                 
                 it("empty password - expected fail") {
-                    email.onNext("validEmail@email.com")
-                    password.onNext("")
+                    updateEmailAndPasswordInput("validEmail@email.com", "")
                     viewModel.signIn()
                     expect(isLoginSuccess).to(beFalse())
                     expect(isLoginError).notTo(beNil())
                 }
                 
                 it("valid email and password - expected login success") {
-                    email.onNext("correct@email.com")
-                    password.onNext("correctPassword")
+                    updateEmailAndPasswordInput("validEmail@email.com", "validPassword")
                     viewModel.signIn()
                     expect(isLoginError).to(beNil())
                     expect(isLoginSuccess).to(beTrue())
@@ -85,8 +83,7 @@ class LoginViewModelTests: QuickSpec {
             context("login with invalid credentials") {
                 
                 it("expected error") {
-                    email.onNext("wrong@email.com")
-                    password.onNext("wrongPassword")
+                    updateEmailAndPasswordInput("wrong@email.com", "wrongPassword")
                     viewModel.signIn()
                     expect(isLoginSuccess).to(beFalse())
                     expect(isLoginError).notTo(beNil())
@@ -96,8 +93,7 @@ class LoginViewModelTests: QuickSpec {
             context("login with valid credentials") {
                 
                 it("expected login successful") {
-                    email.onNext("validEmail@email.com")
-                    password.onNext("validPassword")
+                    updateEmailAndPasswordInput("validEmail@email.com", "validPassword")
                     viewModel.signIn()
                     expect(isLoginError).to(beNil())
                     expect(isLoginSuccess).to(beTrue())

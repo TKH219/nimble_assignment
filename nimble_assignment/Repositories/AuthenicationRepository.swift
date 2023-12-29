@@ -7,7 +7,6 @@
 
 import Foundation
 import RxSwift
-import PromiseKit
 
 protocol AuthenicationRepository {
     func signIn(email: String, password: String) -> Single<Bool>

@@ -6,7 +6,6 @@ def survey_pods
   pod 'RxCocoa', '6.5.0'
   pod 'RxGesture'
   pod 'NSObject+Rx'
-  pod "PromiseKit", "~> 8"
 end
 
 
@@ -19,7 +18,7 @@ target 'nimble_assignment' do
   pod 'KeychainAccess'
   pod 'Kingfisher'
   pod 'SideMenu'
-
+  
   target 'nimble_assignmentTests' do
     inherit! :search_paths
     survey_pods
