@@ -16,22 +16,17 @@ class BaseViewModel: NSObject {
     
     let activityIndicator = ActivityIndicator()
     
-    public var errorMessages: Observable<CustomError> {
+    public var errorMessages: Observable<String?> {
         return errorMessagesSubject.asObserver()
     }
     
-    public let errorMessagesSubject = PublishSubject<CustomError>()
+    public let errorMessagesSubject = PublishSubject<String?>()
     
     init(resolver: Resolver) {
         self.resolver = resolver
     }
     
-    func errorHandler(_ error: Error) {
-        if let error = error as? CustomError {
-            errorMessagesSubject.onNext(error)
-            return
-        }
-        
-        errorMessagesSubject.onNext(CustomError.unknown)
+    func errorHandler(_ errorMessage: String?) {
+        errorMessagesSubject.onNext(errorMessage)
     }
 }
