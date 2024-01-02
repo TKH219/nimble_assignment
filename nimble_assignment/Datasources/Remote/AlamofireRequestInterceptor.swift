@@ -64,28 +64,15 @@ class AlamofireRequestInterceptor: RequestInterceptor {
                    parameters: params,
                    encoding: URLEncoding.default,
                    headers: [:])
-        .responseData { [weak self] response in
-            guard let strongSelf = self else { return }
+        .responseDecodable(of: LoginResponse.self) { response in
             switch response.result {
             case .success(let data):
-                do {
-                    let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-                    if !JSONSerialization.isValidJSONObject(jsonObject) {
-                        completion(false, nil)
-                    }
-                    
-                    let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-                    let decoder = JSONDecoder()
-                    let response = try decoder.decode(LoginResponse.self, from: jsonData)
-                    completion(true, response)
-                } catch {
-                    completion(false, nil)
-                }
+                completion(true, data)
             case .failure(_):
                 completion(false, nil)
             }
             
-            strongSelf.isRefreshing = false
+            self.isRefreshing = false
         }
     }
 }
