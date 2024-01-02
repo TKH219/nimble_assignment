@@ -13,7 +13,7 @@ class ProfileSideMenuViewController: BaseViewController<ProfileSideMenuViewModel
     var onLogoutSuccess: (() -> Void)?
 
     lazy var profileButton: RoundedButton = {
-        let button = RoundedButton(imageString: "user_profile")
+        let button = RoundedButton(imageString: "user_profile", borderRadius: 28)
         return button
     }()
     

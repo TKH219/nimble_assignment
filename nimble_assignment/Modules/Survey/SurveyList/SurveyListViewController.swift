@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 import SideMenu
+import SkeletonView
 
 class SurveyListViewController: BaseViewController<SurveyListViewModel> {
     
@@ -17,13 +18,13 @@ class SurveyListViewController: BaseViewController<SurveyListViewModel> {
     private let onPageChanged = BehaviorSubject<Int>(value: 0)
     
     lazy var nextButton: RoundedButton = {
-        let button = RoundedButton(imageString: "circle_button")
+        let button = RoundedButton(imageString: "circle_button", borderRadius: 28)
         button.addTarget(self, action: #selector(onTapNextButton), for: .touchUpInside)
         return button
     }()
     
     lazy var profileButton: RoundedButton = {
-        let button = RoundedButton(imageString: "user_profile")
+        let button = RoundedButton(imageString: "user_profile", borderRadius: 28)
         button.addTarget(self, action: #selector(showProfileMenu), for: .touchUpInside)
         return button
     }()
@@ -93,6 +94,7 @@ class SurveyListViewController: BaseViewController<SurveyListViewModel> {
 
     override func setupView() {
         super.setupView()
+        view.isSkeletonable = true
         view.addSubview(collectionView)
         view.addSubview(profileButton)
         view.addSubview(dateTimeTitle)
@@ -109,6 +111,8 @@ class SurveyListViewController: BaseViewController<SurveyListViewModel> {
             } else {
                 make.top.equalToSuperview().offset(45)
             }
+            
+            make.width.height.equalTo(56)
             make.right.equalToSuperview().offset(-20)
         }
 
@@ -136,6 +140,8 @@ class SurveyListViewController: BaseViewController<SurveyListViewModel> {
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-54)
         }
+        
+        view.showAnimatedGradientSkeleton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -152,9 +158,10 @@ class SurveyListViewController: BaseViewController<SurveyListViewModel> {
                 cellType: SurveyCollectionViewCell.self
             )) {(index, value, cell) in
                 cell.bindData(survey: value)
+                self.view.hideSkeleton()
             }
             .disposed(by: rx.disposeBag)
-        
+
         viewModel.surveys
             .map { $0.count }
             .asDriver(onErrorJustReturn: 0)

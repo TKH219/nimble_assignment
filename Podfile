@@ -18,6 +18,7 @@ target 'nimble_assignment' do
   pod 'KeychainAccess'
   pod 'Kingfisher'
   pod 'SideMenu'
+  pod 'SkeletonView'
   
   target 'nimble_assignmentTests' do
     inherit! :search_paths
