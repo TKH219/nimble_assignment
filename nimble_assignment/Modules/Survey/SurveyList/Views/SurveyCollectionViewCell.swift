@@ -35,19 +35,15 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
+    lazy var titleLabel: TitleLabel = {
+        let label = TitleLabel(titleString: "")
         label.font = .boldSystemFont(ofSize: 28)
-        label.textColor = .white
-        label.numberOfLines = 2
         return label
     }()
     
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
+    lazy var descriptionLabel: TitleLabel = {
+        let label = TitleLabel(titleString: "")
         label.font = .systemFont(ofSize: 17)
-        label.textColor = .white
-        label.numberOfLines = 2
         return label
     }()
     
@@ -67,14 +63,14 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        makeUI()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func makeUI() {
+    func setupView() {
         contentView.addSubview(backgroundImage)
         contentView.addSubview(overlayView)
         contentView.addSubview(titleLabel)
@@ -96,6 +92,8 @@ class SurveyCollectionViewCell: UICollectionViewCell, ReusableCell {
             make.left.equalTo(titleLabel)
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
         }
+        
+        contentView.isSkeletonable = true
     }
     
     func bindData(survey: Survey?) {
