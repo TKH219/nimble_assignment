@@ -36,22 +36,10 @@ class AlamofireClient: NSObject {
                                   interceptor: self.alamofireRequestInterceptor)
                 .validate(contentType: ["application/json"])
                 .validate(statusCode: [200])
-                .responseData { response in
+                .responseDecodable(of: T.self) { response in
                     switch response.result {
                     case .success(let data):
-                        do {
-                            let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
-                            if !JSONSerialization.isValidJSONObject(jsonObject) {
-                                single(.failure(CustomError.invalidJson))
-                            }
-                            
-                            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
-                            let decoder = JSONDecoder()
-                            let response = try decoder.decode(T.self, from: jsonData)
-                            single(.success(response))
-                        } catch {
-                            single(.failure(CustomError.invalidJson))
-                        }
+                            single(.success(data))
                     case .failure(_):
                         let errorEnum = self.errorHandle(statusCode: response.response?.statusCode)
                         single(.failure(errorEnum))
